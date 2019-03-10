@@ -1,0 +1,26 @@
+server:
+  servlet:
+    context-path: /risk/
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 500
+    max-connections: 5000
+
+spring:
+  application:
+    name: risk-service
+  profiles:
+    active: dev
+  banner:
+    charset: utf-8
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    encoding: UTF-8
+
+mybatis:
+  mapper-locations:
+  - classpath:mappers/*.xml
