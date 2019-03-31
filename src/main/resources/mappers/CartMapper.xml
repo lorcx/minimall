@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.mmall.dao.CartMapper" >
-  <resultMap id="BaseResultMap" type="com.mmall.pojo.Cart" >
+<mapper namespace="com.lx.minimall.mmall.dao.CartMapper" >
+  <resultMap id="BaseResultMap" type="com.lx.minimall.mmall.pojo.Cart" >
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
@@ -25,13 +25,13 @@
     delete from mmall_cart
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.mmall.pojo.Cart" >
+  <insert id="insert" parameterType="com.lx.minimall.mmall.pojo.Cart" >
     insert into mmall_cart
     (id, user_id, product_id,  quantity, checked, create_time,  update_time)
     values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, 
       #{quantity,jdbcType=INTEGER}, #{checked,jdbcType=INTEGER}, now(), now())
   </insert>
-  <insert id="insertSelective" parameterType="com.mmall.pojo.Cart" >
+  <insert id="insertSelective" parameterType="com.lx.minimall.mmall.pojo.Cart" >
     insert into mmall_cart
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mmall.pojo.Cart" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.lx.minimall.mmall.pojo.Cart" >
     update mmall_cart
     <set >
       <if test="userId != null" >
@@ -102,7 +102,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.mmall.pojo.Cart" >
+  <update id="updateByPrimaryKey" parameterType="com.lx.minimall.mmall.pojo.Cart" >
     update mmall_cart
     set user_id = #{userId,jdbcType=INTEGER},
       product_id = #{productId,jdbcType=INTEGER},
